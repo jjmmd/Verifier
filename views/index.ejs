@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grab Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
+
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/controllers.js"></script>
+	<script type="text/javascript" src="/js/filters.js"></script>
+	<script type="text/javascript" src="/js/directives.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="AppCtrl">
+
+<h2>Template List</h2>
+    <div ng-controller="TemplateListCtrl">
+    	<form>
+    		<div>
+    			Current Selected Template is: {{template.id}}
+    		</div>
+        	<select ng-model="template" ng-options="t.title for t in templateList"></select>
+        	<button class="btn btn-default" ng-click="getTemplate()">Load Template</button>
+    	</form>
+    </div>
+    <div>
+    	{{outputText}}
+    </div>
+</body>
+
+</html>
